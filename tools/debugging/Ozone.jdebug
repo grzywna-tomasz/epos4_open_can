@@ -22,18 +22,17 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute ("C:/Users/Tomaqsz/workspace/epos4_open_can/tools/debugging", "$(ProjectDir)");
-  Project.AddPathSubstitute ("c:/users/tomaqsz/workspace/epos4_open_can/tools/debugging", "$(ProjectDir)");
   Project.SetDevice ("STM32F105VB");
   Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("SWD");
   Project.SetTIFSpeed ("10 MHz");
   Project.AddSvdFile ("$(InstallDir)/Config/CPU/Cortex-M3.svd");
-  Project.AddSvdFile ("C:/Users/Tomaqsz/workspace/epos4_open_can/tools/debugging/STM32F107.svd");
+  Project.AddSvdFile ("STM32F107.svd");
   //
   // User settings
   //
-  File.Open ("C:/Users/Tomaqsz/workspace/epos4_open_can/build/Debug/epos4_open_can_app.elf");
+  Project.SetOSPlugin ("FreeRTOSPlugin_Cortex-M");
+  File.Open ("../../build/Debug/epos4_open_can_app.elf");
 }
 
 /*********************************************************************

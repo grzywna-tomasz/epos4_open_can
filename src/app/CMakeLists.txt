@@ -16,7 +16,10 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_options(${PROJECT_NAME} PRIVATE --remove)
 
-# target_link_libraries(${PROJECT_NAME}
-#     PRIVATE
-#         stm32cubemx
-# )
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        std_libs
+        stm32cubemx
+        freertos_kernel
+        freertos_config
+)
